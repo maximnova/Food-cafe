@@ -56,20 +56,18 @@ nav {
   border-bottom: 1px solid rgba(59,36,16,0.12);
 }
 .nav-logo {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.4rem;
-  font-weight: 700;
+  font-family: 'Jost', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
   color: #3b2410;
   text-decoration: none;
-  display: flex; align-items: center; gap: 10px;
-  letter-spacing: -0.01em;
+  display: flex; align-items: center;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
 }
-.nav-logo-icon {
-  width: 36px; height: 36px;
-  background: #3b2410;
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1rem;
+.nav-logo .logo-accent {
+  color: #c9963a;
+  font-weight: 300;
 }
 .nav-links {
   display: flex; align-items: center; gap: 36px;
@@ -830,6 +828,34 @@ footer {
 }
 .footer-copy { font-size: 0.78rem; color: rgba(247,240,230,0.35); }
 
+/* LEGAL PAGES */
+.legal-body h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #3b2410;
+  margin: 36px 0 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(59,36,16,0.12);
+}
+.legal-body p {
+  font-size: 0.9rem;
+  color: #8a7060;
+  line-height: 1.85;
+  margin-bottom: 14px;
+}
+.legal-body ul {
+  margin: 0 0 14px 20px;
+  padding: 0;
+}
+.legal-body ul li {
+  font-size: 0.9rem;
+  color: #8a7060;
+  line-height: 1.85;
+  margin-bottom: 4px;
+}
+.legal-body a { color: #c9963a; }
+
 @keyframes fade-up {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
@@ -921,8 +947,7 @@ footer {
 
   <nav>
     <a href="#" class="nav-logo" onclick="showPage('home')">
-      <div class="nav-logo-icon">☕</div>
-      The Food Cafe
+      THE FOOD <span class="logo-accent">&nbsp;CAFE</span>
     </a>
     <ul class="nav-links">
       <li><a href="#" onclick="showPage('home')">Home</a></li>
@@ -1082,11 +1107,17 @@ footer {
 <footer>
   <div class="footer-top">
     <div>
-      <div class="footer-brand">☕ The Food Cafe</div>
-      <div class="footer-brand-sub">London's trusted supplier of professional coffee machines, bulk coffee beans, and commercial roasting equipment for the hospitality industry.</div>
+      <div class="footer-brand">THE FOOD <span style="color:#c9963a;font-weight:300;">CAFE</span></div>
+      <div class="footer-brand-sub">London's trusted supplier of professional espresso machines, grinders, and barista accessories for cafes and hospitality businesses across the UK.</div>
+      <div class="footer-brand-sub" style="margin-top:12px;line-height:1.9;">
+        The Food Cafe Ltd<br>
+        98 Lansdowne Road, Flat D<br>
+        London, England W11 2LS<br>
+        United Kingdom
+      </div>
     </div>
     <div>
-      <div class="footer-col-title">Navigation</div>
+      <div class="footer-col-title">Navigate</div>
       <ul class="footer-links">
         <li><a href="#" onclick="showPage('home')">Home</a></li>
         <li><a href="#" onclick="showPage('shop')">Shop</a></li>
@@ -1094,17 +1125,30 @@ footer {
       </ul>
     </div>
     <div>
+      <div class="footer-col-title">Legal</div>
+      <ul class="footer-links">
+        <li><a href="#" onclick="showPage('privacy')">Privacy Policy</a></li>
+        <li><a href="#" onclick="showPage('terms')">Terms &amp; Conditions</a></li>
+        <li><a href="#" onclick="showPage('refunds')">Refund Policy</a></li>
+        <li><a href="#" onclick="showPage('shipping')">Shipping Policy</a></li>
+      </ul>
+    </div>
+    <div>
       <div class="footer-col-title">Contact</div>
       <ul class="footer-links">
-        <li><a href="#">London, United Kingdom</a></li>
-        <li><a href="#">contact@thefoodcafe.co.uk</a></li>
-        <li><a href="#">Trade Enquiries Welcome</a></li>
+        <li><a href="mailto:contact@thefoodcafe.co.uk">contact@thefoodcafe.co.uk</a></li>
+        <li><a href="#">98 Lansdowne Road, London W11 2LS</a></li>
+        <li><a href="#" onclick="showPage('contact')">Trade Enquiries Welcome</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <div class="footer-copy">© 2025 The Food Cafe · London, UK · All rights reserved</div>
-    <div class="footer-copy">Professional Coffee Equipment Supplier</div>
+    <div class="footer-copy">© 2025 The Food Cafe Ltd · Registered in England &amp; Wales · 98 Lansdowne Road, Flat D, London W11 2LS</div>
+    <div class="footer-copy" style="display:flex;gap:16px;">
+      <a href="#" onclick="showPage('privacy')" style="color:rgba(247,240,230,0.35);text-decoration:none;font-size:0.78rem;">Privacy</a>
+      <a href="#" onclick="showPage('terms')" style="color:rgba(247,240,230,0.35);text-decoration:none;font-size:0.78rem;">Terms</a>
+      <a href="#" onclick="showPage('refunds')" style="color:rgba(247,240,230,0.35);text-decoration:none;font-size:0.78rem;">Refunds</a>
+    </div>
   </div>
 </footer>
 ```
@@ -1134,11 +1178,17 @@ footer {
 <footer>
   <div class="footer-top">
     <div>
-      <div class="footer-brand">☕ The Food Cafe</div>
-      <div class="footer-brand-sub">London's trusted supplier of professional coffee machines, bulk coffee beans, and commercial roasting equipment for the hospitality industry.</div>
+      <div class="footer-brand">THE FOOD <span style="color:#c9963a;font-weight:300;">CAFE</span></div>
+      <div class="footer-brand-sub">London's trusted supplier of professional espresso machines, grinders, and barista accessories for cafes and hospitality businesses across the UK.</div>
+      <div class="footer-brand-sub" style="margin-top:12px;line-height:1.9;">
+        The Food Cafe Ltd<br>
+        98 Lansdowne Road, Flat D<br>
+        London, England W11 2LS<br>
+        United Kingdom
+      </div>
     </div>
     <div>
-      <div class="footer-col-title">Navigation</div>
+      <div class="footer-col-title">Navigate</div>
       <ul class="footer-links">
         <li><a href="#" onclick="showPage('home')">Home</a></li>
         <li><a href="#" onclick="showPage('shop')">Shop</a></li>
@@ -1146,16 +1196,30 @@ footer {
       </ul>
     </div>
     <div>
+      <div class="footer-col-title">Legal</div>
+      <ul class="footer-links">
+        <li><a href="#" onclick="showPage('privacy')">Privacy Policy</a></li>
+        <li><a href="#" onclick="showPage('terms')">Terms &amp; Conditions</a></li>
+        <li><a href="#" onclick="showPage('refunds')">Refund Policy</a></li>
+        <li><a href="#" onclick="showPage('shipping')">Shipping Policy</a></li>
+      </ul>
+    </div>
+    <div>
       <div class="footer-col-title">Contact</div>
       <ul class="footer-links">
-        <li><a href="#">London, United Kingdom</a></li>
-        <li><a href="#">contact@thefoodcafe.co.uk</a></li>
-        <li><a href="#">Trade Enquiries Welcome</a></li>
+        <li><a href="mailto:contact@thefoodcafe.co.uk">contact@thefoodcafe.co.uk</a></li>
+        <li><a href="#">98 Lansdowne Road, London W11 2LS</a></li>
+        <li><a href="#" onclick="showPage('contact')">Trade Enquiries Welcome</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <div class="footer-copy">© 2025 The Food Cafe · London, UK · All rights reserved</div>
+    <div class="footer-copy">© 2025 The Food Cafe Ltd · Registered in England &amp; Wales · 98 Lansdowne Road, Flat D, London W11 2LS</div>
+    <div class="footer-copy" style="display:flex;gap:16px;">
+      <a href="#" onclick="showPage('privacy')" style="color:rgba(247,240,230,0.35);text-decoration:none;font-size:0.78rem;">Privacy</a>
+      <a href="#" onclick="showPage('terms')" style="color:rgba(247,240,230,0.35);text-decoration:none;font-size:0.78rem;">Terms</a>
+      <a href="#" onclick="showPage('refunds')" style="color:rgba(247,240,230,0.35);text-decoration:none;font-size:0.78rem;">Refunds</a>
+    </div>
   </div>
 </footer>
 ```
@@ -1187,7 +1251,7 @@ footer {
       <div class="ci-icon">✉️</div>
       <div>
         <div class="ci-label">Email</div>
-        <div class="ci-value">contact@thefoodcafe.co.uk</div>
+        <div class="ci-value"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="462529283227253206322e23202929222527202368252968332d">[email&#160;protected]</a></div>
       </div>
     </div>
     <div class="contact-item">
@@ -1255,11 +1319,17 @@ footer {
 <footer>
   <div class="footer-top">
     <div>
-      <div class="footer-brand">☕ The Food Cafe</div>
-      <div class="footer-brand-sub">London's trusted supplier of professional coffee machines, bulk coffee beans, and commercial roasting equipment.</div>
+      <div class="footer-brand">THE FOOD <span style="color:#c9963a;font-weight:300;">CAFE</span></div>
+      <div class="footer-brand-sub">London's trusted supplier of professional espresso machines, grinders, and barista accessories for cafes and hospitality businesses across the UK.</div>
+      <div class="footer-brand-sub" style="margin-top:12px;line-height:1.9;">
+        The Food Cafe Ltd<br>
+        98 Lansdowne Road, Flat D<br>
+        London, England W11 2LS<br>
+        United Kingdom
+      </div>
     </div>
     <div>
-      <div class="footer-col-title">Navigation</div>
+      <div class="footer-col-title">Navigate</div>
       <ul class="footer-links">
         <li><a href="#" onclick="showPage('home')">Home</a></li>
         <li><a href="#" onclick="showPage('shop')">Shop</a></li>
@@ -1267,15 +1337,308 @@ footer {
       </ul>
     </div>
     <div>
+      <div class="footer-col-title">Legal</div>
+      <ul class="footer-links">
+        <li><a href="#" onclick="showPage('privacy')">Privacy Policy</a></li>
+        <li><a href="#" onclick="showPage('terms')">Terms &amp; Conditions</a></li>
+        <li><a href="#" onclick="showPage('refunds')">Refund Policy</a></li>
+        <li><a href="#" onclick="showPage('shipping')">Shipping Policy</a></li>
+      </ul>
+    </div>
+    <div>
       <div class="footer-col-title">Contact</div>
       <ul class="footer-links">
-        <li><a href="#">London, United Kingdom</a></li>
-        <li><a href="#">contact@thefoodcafe.co.uk</a></li>
+        <li><a href="mailto:contact@thefoodcafe.co.uk">contact@thefoodcafe.co.uk</a></li>
+        <li><a href="#">98 Lansdowne Road, London W11 2LS</a></li>
+        <li><a href="#" onclick="showPage('contact')">Trade Enquiries Welcome</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <div class="footer-copy">© 2025 The Food Cafe · London, UK</div>
+    <div class="footer-copy">© 2025 The Food Cafe Ltd · Registered in England &amp; Wales · 98 Lansdowne Road, Flat D, London W11 2LS</div>
+    <div class="footer-copy" style="display:flex;gap:16px;">
+      <a href="#" onclick="showPage('privacy')" style="color:rgba(247,240,230,0.35);text-decoration:none;font-size:0.78rem;">Privacy</a>
+      <a href="#" onclick="showPage('terms')" style="color:rgba(247,240,230,0.35);text-decoration:none;font-size:0.78rem;">Terms</a>
+      <a href="#" onclick="showPage('refunds')" style="color:rgba(247,240,230,0.35);text-decoration:none;font-size:0.78rem;">Refunds</a>
+    </div>
+  </div>
+</footer>
+```
+
+  </div>
+
+  <!-- ============ PRIVACY POLICY PAGE ============ -->
+
+  <div id="page-privacy" class="page">
+    <section class="shop-hero">
+      <div class="section-tag reveal">Legal</div>
+      <h1 class="reveal">Privacy Policy</h1>
+      <p class="reveal">Last updated: April 2025</p>
+    </section>
+    <section style="padding:80px 6vw;max-width:860px;margin:0 auto;">
+      <div class="legal-body">
+        <h2>1. Who We Are</h2>
+        <p>The Food Cafe Ltd ("we", "our", "us") is a company registered in England and Wales. Our registered address is 98 Lansdowne Road, Flat D, London, England W11 2LS. We operate the website thefoodcafe.co.uk and sell professional coffee equipment to businesses and individuals across the UK.</p>
+
+```
+    <h2>2. What Data We Collect</h2>
+    <p>We may collect the following personal data when you use our website or contact us:</p>
+    <ul>
+      <li>Name, email address, phone number</li>
+      <li>Billing and delivery address</li>
+      <li>Payment information (processed securely via our payment provider — we do not store card details)</li>
+      <li>Order history and correspondence</li>
+      <li>Website usage data via cookies</li>
+    </ul>
+
+    <h2>3. How We Use Your Data</h2>
+    <p>We use your personal data to:</p>
+    <ul>
+      <li>Process and fulfil your orders</li>
+      <li>Respond to your enquiries</li>
+      <li>Send order confirmations and delivery updates</li>
+      <li>Comply with legal and tax obligations</li>
+      <li>Improve our website and services</li>
+    </ul>
+    <p>We will only contact you for marketing purposes if you have given explicit consent.</p>
+
+    <h2>4. Legal Basis for Processing</h2>
+    <p>We process your data under the following legal bases as defined by UK GDPR: (a) contract performance — to fulfil orders; (b) legal obligation — to comply with UK law; (c) legitimate interests — to improve our services; (d) consent — for any marketing communications.</p>
+
+    <h2>5. Data Sharing</h2>
+    <p>We do not sell your personal data. We may share it with trusted third parties only as necessary to operate our business, including payment processors (e.g. Stripe, PayPal), delivery couriers, and IT service providers. All third parties are bound by data processing agreements.</p>
+
+    <h2>6. Data Retention</h2>
+    <p>We retain customer data for a minimum of 6 years as required by HMRC for tax records. You may request deletion of data not subject to legal retention obligations.</p>
+
+    <h2>7. Your Rights</h2>
+    <p>Under UK GDPR you have the right to: access your data, correct inaccuracies, request deletion, restrict or object to processing, and data portability. To exercise any right, contact us at contact@thefoodcafe.co.uk.</p>
+
+    <h2>8. Cookies</h2>
+    <p>Our website uses essential cookies to function correctly. We do not use tracking or advertising cookies without your consent. You can manage cookies through your browser settings.</p>
+
+    <h2>9. Contact</h2>
+    <p>For any privacy-related queries, contact: <a href="mailto:contact@thefoodcafe.co.uk">contact@thefoodcafe.co.uk</a><br>The Food Cafe Ltd, 98 Lansdowne Road, Flat D, London W11 2LS</p>
+  </div>
+</section>
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand">THE FOOD <span style="color:#c9963a;font-weight:300;">CAFE</span></div>
+      <div class="footer-brand-sub">The Food Cafe Ltd · 98 Lansdowne Road, Flat D, London W11 2LS</div>
+    </div>
+    <div>
+      <div class="footer-col-title">Navigate</div>
+      <ul class="footer-links">
+        <li><a href="#" onclick="showPage('home')">Home</a></li>
+        <li><a href="#" onclick="showPage('shop')">Shop</a></li>
+        <li><a href="#" onclick="showPage('contact')">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Legal</div>
+      <ul class="footer-links">
+        <li><a href="#" onclick="showPage('privacy')">Privacy Policy</a></li>
+        <li><a href="#" onclick="showPage('terms')">Terms &amp; Conditions</a></li>
+        <li><a href="#" onclick="showPage('refunds')">Refund Policy</a></li>
+        <li><a href="#" onclick="showPage('shipping')">Shipping Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 The Food Cafe Ltd · Registered in England &amp; Wales · London W11 2LS</div>
+  </div>
+</footer>
+```
+
+  </div>
+
+  <!-- ============ TERMS & CONDITIONS PAGE ============ -->
+
+  <div id="page-terms" class="page">
+    <section class="shop-hero">
+      <div class="section-tag reveal">Legal</div>
+      <h1 class="reveal">Terms &amp; Conditions</h1>
+      <p class="reveal">Last updated: April 2025</p>
+    </section>
+    <section style="padding:80px 6vw;max-width:860px;margin:0 auto;">
+      <div class="legal-body">
+        <h2>1. About Us</h2>
+        <p>These Terms &amp; Conditions govern your use of thefoodcafe.co.uk and any purchase made from The Food Cafe Ltd, registered in England and Wales, with registered address at 98 Lansdowne Road, Flat D, London, England W11 2LS. By placing an order or using our website, you agree to these terms.</p>
+
+```
+    <h2>2. Products &amp; Pricing</h2>
+    <p>All prices are shown in GBP (£) and exclude VAT unless otherwise stated. We reserve the right to change prices at any time without notice. Product images are for illustration purposes; actual products may vary slightly. We make every effort to ensure product descriptions are accurate.</p>
+
+    <h2>3. Orders &amp; Payment</h2>
+    <p>By submitting an order enquiry or purchase, you are making an offer to buy. We reserve the right to decline any order. Payment must be received in full before goods are dispatched. We accept payment via our approved payment gateway. Bank transfer payments receive a 2% discount.</p>
+
+    <h2>4. Delivery</h2>
+    <p>We deliver to UK mainland addresses Monday to Friday, excluding bank holidays. Standard delivery takes 1–5 working days. Delivery charges will be confirmed at the point of sale. Risk in the goods passes to you upon delivery. For full details see our Shipping Policy.</p>
+
+    <h2>5. Returns &amp; Cancellations</h2>
+    <p>You have the right to cancel an order within 14 days of receipt under the Consumer Contracts Regulations 2013, provided goods are unused and in original packaging. A 20% restocking fee applies to items not returned in resalable condition. Bespoke or custom orders are non-returnable. For full details see our Refund Policy.</p>
+
+    <h2>6. Warranty</h2>
+    <p>All products carry a minimum 12-month manufacturer's warranty. UK orders on coffee machines and grinders receive a 2-year back-to-base warranty. Warranty does not cover damage caused by misuse, improper installation, or failure to follow maintenance guidelines.</p>
+
+    <h2>7. Limitation of Liability</h2>
+    <p>To the maximum extent permitted by law, The Food Cafe Ltd shall not be liable for any indirect, incidental, or consequential losses arising from the use of our products or website. Our total liability to you shall not exceed the value of the goods purchased.</p>
+
+    <h2>8. Intellectual Property</h2>
+    <p>All content on this website including text, images, and design is the property of The Food Cafe Ltd or its licensors and may not be reproduced without written permission.</p>
+
+    <h2>9. Governing Law</h2>
+    <p>These terms are governed by the laws of England and Wales. Any disputes shall be subject to the exclusive jurisdiction of the courts of England and Wales.</p>
+
+    <h2>10. Contact</h2>
+    <p><a href="mailto:contact@thefoodcafe.co.uk">contact@thefoodcafe.co.uk</a><br>The Food Cafe Ltd, 98 Lansdowne Road, Flat D, London W11 2LS</p>
+  </div>
+</section>
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand">THE FOOD <span style="color:#c9963a;font-weight:300;">CAFE</span></div>
+      <div class="footer-brand-sub">The Food Cafe Ltd · 98 Lansdowne Road, Flat D, London W11 2LS</div>
+    </div>
+    <div>
+      <div class="footer-col-title">Legal</div>
+      <ul class="footer-links">
+        <li><a href="#" onclick="showPage('privacy')">Privacy Policy</a></li>
+        <li><a href="#" onclick="showPage('terms')">Terms &amp; Conditions</a></li>
+        <li><a href="#" onclick="showPage('refunds')">Refund Policy</a></li>
+        <li><a href="#" onclick="showPage('shipping')">Shipping Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 The Food Cafe Ltd · Registered in England &amp; Wales · London W11 2LS</div>
+  </div>
+</footer>
+```
+
+  </div>
+
+  <!-- ============ REFUND POLICY PAGE ============ -->
+
+  <div id="page-refunds" class="page">
+    <section class="shop-hero">
+      <div class="section-tag reveal">Legal</div>
+      <h1 class="reveal">Refund Policy</h1>
+      <p class="reveal">Last updated: April 2025</p>
+    </section>
+    <section style="padding:80px 6vw;max-width:860px;margin:0 auto;">
+      <div class="legal-body">
+        <h2>1. Your Right to Cancel</h2>
+        <p>Under the Consumer Contracts Regulations 2013, you have the right to cancel your order within 14 calendar days of receiving your goods, without giving any reason.</p>
+
+```
+    <h2>2. How to Return</h2>
+    <p>To initiate a return, contact us at <a href="mailto:contact@thefoodcafe.co.uk">contact@thefoodcafe.co.uk</a> within the 14-day window. We will provide return instructions. Goods must be returned within 14 days of notifying us.</p>
+
+    <h2>3. Condition of Returns</h2>
+    <p>Returned items must be:</p>
+    <ul>
+      <li>Unused and in original, unopened packaging</li>
+      <li>Accompanied by original documentation and accessories</li>
+      <li>In a fully resalable condition</li>
+    </ul>
+    <p>A 20% restocking fee will be applied to any items not returned in resalable condition.</p>
+
+    <h2>4. Non-Returnable Items</h2>
+    <p>The following cannot be returned: bespoke or custom-configured orders, items that have been used or installed, consumables (coffee beans, filters, cleaning products) once opened.</p>
+
+    <h2>5. Refund Processing</h2>
+    <p>Once we receive and inspect the returned goods, we will process your refund within 14 days to your original payment method. We reserve the right to deduct any restocking fee or costs to return the item to resalable condition.</p>
+
+    <h2>6. Faulty or Damaged Goods</h2>
+    <p>If your item arrives damaged or faulty, contact us within 48 hours with photos. We will arrange a replacement or full refund at no cost to you.</p>
+
+    <h2>7. Return Shipping</h2>
+    <p>Return shipping costs are the buyer's responsibility unless the item is faulty or was incorrectly sent. We recommend using a tracked service as we cannot accept responsibility for lost returns.</p>
+
+    <h2>8. Contact</h2>
+    <p><a href="mailto:contact@thefoodcafe.co.uk">contact@thefoodcafe.co.uk</a><br>The Food Cafe Ltd, 98 Lansdowne Road, Flat D, London W11 2LS</p>
+  </div>
+</section>
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand">THE FOOD <span style="color:#c9963a;font-weight:300;">CAFE</span></div>
+      <div class="footer-brand-sub">The Food Cafe Ltd · 98 Lansdowne Road, Flat D, London W11 2LS</div>
+    </div>
+    <div>
+      <div class="footer-col-title">Legal</div>
+      <ul class="footer-links">
+        <li><a href="#" onclick="showPage('privacy')">Privacy Policy</a></li>
+        <li><a href="#" onclick="showPage('terms')">Terms &amp; Conditions</a></li>
+        <li><a href="#" onclick="showPage('refunds')">Refund Policy</a></li>
+        <li><a href="#" onclick="showPage('shipping')">Shipping Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 The Food Cafe Ltd · Registered in England &amp; Wales · London W11 2LS</div>
+  </div>
+</footer>
+```
+
+  </div>
+
+  <!-- ============ SHIPPING POLICY PAGE ============ -->
+
+  <div id="page-shipping" class="page">
+    <section class="shop-hero">
+      <div class="section-tag reveal">Legal</div>
+      <h1 class="reveal">Shipping Policy</h1>
+      <p class="reveal">Last updated: April 2025</p>
+    </section>
+    <section style="padding:80px 6vw;max-width:860px;margin:0 auto;">
+      <div class="legal-body">
+        <h2>1. Delivery Areas</h2>
+        <p>We ship to all UK mainland addresses. Northern Ireland, Scottish Highlands, Channel Islands, and international orders may be subject to additional charges and extended delivery times — please contact us before ordering.</p>
+
+```
+    <h2>2. Dispatch Times</h2>
+    <p>Orders placed before 1pm Monday to Friday (excluding UK bank holidays) are typically dispatched the same day. Orders placed after 1pm or on weekends are dispatched the next working day. During busy periods, dispatch may take up to 2 working days.</p>
+
+    <h2>3. Delivery Times</h2>
+    <p>Standard UK delivery takes 1–5 working days from dispatch. Larger items (espresso machines, grinders) may require a specialist courier and take 2–5 working days. You will receive a tracking number once your order is dispatched.</p>
+
+    <h2>4. Delivery Charges</h2>
+    <p>Delivery charges are calculated at the point of sale based on item size, weight, and delivery location. Free delivery may be available on qualifying orders — this will be confirmed during the ordering process.</p>
+
+    <h2>5. Failed Deliveries</h2>
+    <p>If a delivery attempt is unsuccessful, the courier will leave a card with instructions. Unclaimed parcels will be returned to us after the courier's holding period. Re-delivery charges may apply.</p>
+
+    <h2>6. Damaged in Transit</h2>
+    <p>All orders are carefully packaged. If your item arrives visibly damaged, please refuse delivery if possible and contact us within 48 hours with photos. We will arrange a replacement or refund promptly.</p>
+
+    <h2>7. Trade &amp; Bulk Orders</h2>
+    <p>For large or trade orders involving multiple machines or bulk accessories, please contact us directly at <a href="mailto:contact@thefoodcafe.co.uk">contact@thefoodcafe.co.uk</a> for a customised delivery quote and timeline.</p>
+
+    <h2>8. Contact</h2>
+    <p><a href="mailto:contact@thefoodcafe.co.uk">contact@thefoodcafe.co.uk</a><br>The Food Cafe Ltd, 98 Lansdowne Road, Flat D, London W11 2LS</p>
+  </div>
+</section>
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand">THE FOOD <span style="color:#c9963a;font-weight:300;">CAFE</span></div>
+      <div class="footer-brand-sub">The Food Cafe Ltd · 98 Lansdowne Road, Flat D, London W11 2LS</div>
+    </div>
+    <div>
+      <div class="footer-col-title">Legal</div>
+      <ul class="footer-links">
+        <li><a href="#" onclick="showPage('privacy')">Privacy Policy</a></li>
+        <li><a href="#" onclick="showPage('terms')">Terms &amp; Conditions</a></li>
+        <li><a href="#" onclick="showPage('refunds')">Refund Policy</a></li>
+        <li><a href="#" onclick="showPage('shipping')">Shipping Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 The Food Cafe Ltd · Registered in England &amp; Wales · London W11 2LS</div>
   </div>
 </footer>
 ```
@@ -1648,13 +2011,11 @@ footer {
       els.forEach(el => observer.observe(el));
     }
 
-    // Contact form submit
     function submitContact() {
       document.getElementById('contactFormContent').style.display = 'none';
       document.getElementById('contactSuccess').style.display = 'block';
     }
 
-    // Init on load
     window.addEventListener('DOMContentLoaded', () => {
       setTimeout(initReveal, 100);
     });
