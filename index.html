@@ -963,10 +963,10 @@
           <div class="hero-feat-card">
             <div class="hero-feat-icon">☕</div>
             <div>
-              <div class="hero-feat-name">La Marzocco Linea PB</div>
-              <div class="hero-feat-meta">Dual Boiler · PID Control · High Volume</div>
+              <div class="hero-feat-name">Faema Faemina</div>
+              <div class="hero-feat-meta">Dual Boiler · PID Control · App Connected</div>
             </div>
-            <div class="hero-feat-price">£7,200</div>
+            <div class="hero-feat-price">£5,200</div>
           </div>
           <div class="hero-feat-card">
             <div class="hero-feat-icon">🔥</div>
@@ -1105,10 +1105,10 @@
 
     <section class="shop-section">
       <div class="shop-filter">
-        <button class="filter-btn active" onclick="filterProducts('all', this)">All Products</button>
-        <button class="filter-btn" onclick="filterProducts('machine', this)">Espresso Machines</button>
-        <button class="filter-btn" onclick="filterProducts('roaster', this)">Roasting Machines</button>
-        <button class="filter-btn" onclick="filterProducts('coffee', this)">Bulk Coffee</button>
+        <button class="filter-btn active" onclick="filterProducts('all', this)">All Machines</button>
+        <button class="filter-btn" onclick="filterProducts('under2k', this)">Under £2,000</button>
+        <button class="filter-btn" onclick="filterProducts('2kto4k', this)">£2,000 – £4,000</button>
+        <button class="filter-btn" onclick="filterProducts('over4k', this)">£4,000+</button>
       </div>
       <div class="shop-grid" id="shopProductsGrid"></div>
     </section>
@@ -1263,81 +1263,177 @@
     const products = [
       {
         id: 1,
-        name: "La Marzocco Linea PB",
+        name: "ECM Synchronika II Espresso Machine",
         category: "machine",
-        emoji: "☕",
-        badge: "Bestseller",
-        price: "£7,200",
-        desc: "The gold standard in commercial espresso. Dual boiler system with PID temperature control. Built for high-volume cafe environments.",
-        tags: ["Dual Boiler", "PID Control", "High Volume"]
+        image: "https://bellabarista.co.uk/cdn/shop/files/ECM_Synchronika_II-seitlich-768x504-1.jpg?v=1771345824&width=600",
+        badge: "New",
+        price: "£2,679",
+        desc: "A flagship dual boiler machine from ECM with flow profiling, precise PID temperature control, and a premium stainless steel build. Built for serious home baristas.",
+        tags: ["Dual Boiler", "Flow Profiling", "PID Control"]
       },
       {
         id: 2,
-        name: "Nuova Simonelli Aurelia Wave",
+        name: "Profitec Pro 700 Drive — Flow Control",
         category: "machine",
-        emoji: "⚙️",
-        badge: "Pro",
-        price: "£5,800",
-        desc: "Competition-grade espresso machine with gravimetric technology. Delivers precision extraction every single shot.",
-        tags: ["Gravimetric", "Competition Grade", "T3 Technology"]
+        image: "https://bellabarista.co.uk/cdn/shop/files/Drive1.jpg?v=1698744093&width=600",
+        badge: "Sale",
+        price: "£2,399",
+        desc: "Dual boiler espresso machine with flow control valve and joystick steam wands. Delivers exceptional espresso with total extraction control.",
+        tags: ["Flow Control", "Dual Boiler", "Joystick Wands"]
       },
       {
         id: 3,
-        name: "Probat P12 Coffee Roaster",
-        category: "roaster",
-        emoji: "🔥",
-        badge: "Industrial",
-        price: "£18,500",
-        desc: "12kg batch capacity drum roaster. Industry-leading consistency and control with advanced airflow management for specialty roasting.",
-        tags: ["12kg Batch", "Drum Roaster", "Specialty Grade"]
+        name: "Lelit Bianca V3 Dual Boiler",
+        category: "machine",
+        image: "https://bellabarista.co.uk/cdn/shop/products/lelit_bianca_1_2_74f51618-1583-4df9-b261-824095accb85.jpg?v=1717144634&width=600",
+        badge: "Sale",
+        price: "From £1,960",
+        desc: "Iconic dual boiler machine with paddle flow profiling and stunning wood accents. Available in stainless steel, black, white, and gold with zebrano wood.",
+        tags: ["Paddle Control", "Dual Boiler", "Flow Profiling"]
       },
       {
         id: 4,
-        name: "Diedrich IR-12 Roaster",
-        category: "roaster",
-        emoji: "🏭",
-        badge: "Premium",
-        price: "£22,000",
-        desc: "Infrared drum roaster delivering clean, even roasts. Favoured by specialty roasteries for its exceptional consistency and fuel efficiency.",
-        tags: ["Infrared", "12kg Capacity", "Fuel Efficient"]
+        name: "La Marzocco Linea Mini",
+        category: "machine",
+        image: "https://bellabarista.co.uk/cdn/shop/files/download-2.png?v=1708015633&width=600",
+        badge: "Popular",
+        price: "£4,895",
+        desc: "Bring the La Marzocco commercial experience home. Saturated group head, dual boiler, and app connectivity in a beautifully compact chassis.",
+        tags: ["Dual Boiler", "Saturated Group", "App Connected"]
       },
       {
         id: 5,
-        name: "Ethiopian Yirgacheffe — Bulk",
-        category: "coffee",
-        emoji: "🌱",
-        badge: "Specialty",
-        price: "£12.50/kg",
-        desc: "Single-origin green beans from the Yirgacheffe region. Floral and bright with notes of jasmine, bergamot, and stone fruit. Min. 25kg.",
-        tags: ["Single Origin", "Green Beans", "Min 25kg"]
+        name: "Rancilio Silvia PRO X",
+        category: "machine",
+        image: "https://bellabarista.co.uk/cdn/shop/products/silvia_pro_x_1.jpg?v=1659016233&width=600",
+        badge: "Bestseller",
+        price: "£1,350",
+        desc: "The beloved Silvia, upgraded with a dual boiler system and PID control. Compact, reliable, and precise — available in black, white, pink, and stainless steel.",
+        tags: ["Dual Boiler", "PID Control", "Compact"]
       },
       {
         id: 6,
-        name: "House Blend Espresso — Bulk",
-        category: "coffee",
-        emoji: "☕",
-        badge: "Popular",
-        price: "£9.80/kg",
-        desc: "A perfectly balanced medium roast espresso blend. Smooth, chocolatey, and consistent — ideal for cafes serving high daily volume. Min. 20kg.",
-        tags: ["Espresso Blend", "Roasted", "Min 20kg"]
+        name: "La Marzocco GS3 Manual Paddle",
+        category: "machine",
+        image: "https://bellabarista.co.uk/cdn/shop/products/la-marzocco-gs3-mp-manual-paddle_1.jpg?v=1669718379&width=600",
+        badge: "Premium",
+        price: "£7,050",
+        desc: "The pinnacle of home espresso. Manual paddle for full pre-infusion control, dual boiler, and iconic La Marzocco build quality. A collector's machine.",
+        tags: ["Manual Paddle", "Dual Boiler", "Pre-Infusion"]
+      },
+      {
+        id: 7,
+        name: "Lelit Elizabeth V3 Dual Boiler",
+        category: "machine",
+        image: "https://bellabarista.co.uk/cdn/shop/products/screen_shot_2018-05-15_at_12.11.03_copy.jpg?v=1660035073&width=600",
+        badge: "Entry Dual",
+        price: "£1,199.95",
+        desc: "An exceptional entry into dual boiler espresso. Compact footprint, PID temperature control, and excellent steam power at an accessible price point.",
+        tags: ["Dual Boiler", "PID Control", "Compact"]
+      },
+      {
+        id: 8,
+        name: "La Marzocco GS3 Automatic",
+        category: "machine",
+        image: "https://bellabarista.co.uk/cdn/shop/products/la-marzocco-gs3-av-espresso-machine_4780902c-847c-4e86-9108-8fb2775c2c69.jpg?v=1659015938&width=600",
+        badge: "La Marzocco",
+        price: "£6,795",
+        desc: "The automatic version of the legendary GS3. Volumetric dosing, dual boiler temperature stability, and the reliability La Marzocco is world-renowned for.",
+        tags: ["Volumetric", "Dual Boiler", "La Marzocco"]
+      },
+      {
+        id: 9,
+        name: "Faema Faemina Espresso Machine",
+        category: "machine",
+        image: "https://bellabarista.co.uk/cdn/shop/files/download_ed5a596e-58ac-4125-98c8-56a437fea625.jpg?v=1725539242&width=600",
+        badge: "Italian Design",
+        price: "£4,775",
+        desc: "Italian-crafted dual boiler with PID control, rotary pump, app connectivity, and voice recognition. Massive steam power — perfect for home and small business.",
+        tags: ["Dual Boiler", "App Connected", "Voice Control"]
+      },
+      {
+        id: 10,
+        name: "Profitec Move Dual Boiler",
+        category: "machine",
+        image: "https://bellabarista.co.uk/cdn/shop/files/Move2.jpg?v=1722331297&width=600",
+        badge: "Best Value",
+        price: "£1,695",
+        desc: "Profitec's most accessible dual boiler machine. Clean modern design with independent boiler temperature control and a simple, reliable brewing experience.",
+        tags: ["Dual Boiler", "PID Control", "Modern Design"]
+      },
+      {
+        id: 11,
+        name: "Slayer Steam Single",
+        category: "machine",
+        image: "https://bellabarista.co.uk/cdn/shop/files/download_0a868ced-205b-4443-b8d3-b25ab60968f7.webp?v=1731342583&width=600",
+        badge: "High End",
+        price: "£8,999",
+        desc: "The Slayer Steam Single brings needle valve pre-infusion and extraordinary steam power to the home. A statement machine for the most dedicated espresso enthusiast.",
+        tags: ["Needle Valve", "Pre-Infusion", "High Steam"]
+      },
+      {
+        id: 12,
+        name: "Profitec Ride Dual Boiler",
+        category: "machine",
+        image: "https://bellabarista.co.uk/cdn/shop/files/Ride1.jpg?v=1738572027&width=600",
+        badge: "New",
+        price: "From £2,095",
+        desc: "A sleek, performance-focused dual boiler from Profitec with flow control and refined ergonomics. Available in black and black-with-wood finishes.",
+        tags: ["Flow Control", "Dual Boiler", "Ergonomic"]
+      },
+      {
+        id: 13,
+        name: "Arkel Coast Dual Boiler",
+        category: "machine",
+        image: "https://bellabarista.co.uk/cdn/shop/files/render-left-side.png?v=1771347576&width=600",
+        badge: "Coming Soon",
+        price: "£1,975",
+        desc: "A striking new dual boiler design with a coastal-inspired aesthetic. Clean lines, independent boilers, and thoughtful ergonomics in one beautiful package.",
+        tags: ["Dual Boiler", "Modern Design", "PID Control"]
+      },
+      {
+        id: 14,
+        name: "Wendougee Data S Espresso Machine",
+        category: "machine",
+        image: "https://bellabarista.co.uk/cdn/shop/files/bec53a5d-8f41-4786-b830-3890ff870fb8.jpg?v=1743587632&width=600",
+        badge: "Sale",
+        price: "£2,999",
+        desc: "Data-driven espresso with real-time shot analytics, dual boiler precision, and a striking industrial design. Available in black/copper, white/silver, and black/silver.",
+        tags: ["Shot Analytics", "Dual Boiler", "Flow Control"]
+      },
+      {
+        id: 15,
+        name: "The Nurri R-TYPE Dual Boiler",
+        category: "machine",
+        image: "https://bellabarista.co.uk/cdn/shop/files/LTypeBlackStainless1.jpg?v=1773066463&width=600",
+        badge: "New",
+        price: "£2,795",
+        desc: "A bold, architectural dual boiler from Nurri with pressure profiling and a distinctive R-TYPE chassis. Available in white, black, and black stainless steel.",
+        tags: ["Pressure Profiling", "Dual Boiler", "Architectural"]
       }
     ];
 
     // RENDER PRODUCTS
     function renderCard(p, showBadge = true) {
+      const imgContent = p.image
+        ? `<img src="${p.image}" alt="${p.name}" style="width:100%;height:100%;object-fit:cover;display:block;" />`
+        : `<span>${p.emoji}</span>`;
       return `
         <div class="product-card reveal" data-category="${p.category}">
-          <div class="product-img">
-            <span>${p.emoji}</span>
+          <div class="product-img" style="${p.image ? 'font-size:0;' : ''}">
+            ${imgContent}
             ${showBadge && p.badge ? `<span class="product-badge">${p.badge}</span>` : ''}
           </div>
           <div class="product-body">
-            <div class="product-category">${p.category === 'machine' ? 'Espresso Machine' : p.category === 'roaster' ? 'Roasting Machine' : 'Bulk Coffee'}</div>
+            <div class="product-category">Dual Boiler Espresso Machine</div>
             <div class="product-name">${p.name}</div>
             <p class="product-desc">${p.desc}</p>
+            <div class="product-tags" style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px;">
+              ${p.tags.map(t => `<span style="font-size:0.65rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);border-radius:2px;padding:3px 8px;">${t}</span>`).join('')}
+            </div>
             <div class="product-footer">
-              <div class="product-price">${p.price} <span>${p.category === 'coffee' ? '/ per kg' : 'ex. VAT'}</span></div>
-              <button class="btn-order" onclick="openModal(${p.id})">Order Now</button>
+              <div class="product-price">${p.price} <span>ex. VAT</span></div>
+              <button class="btn-order" onclick="openModal(${p.id})">Enquire →</button>
             </div>
           </div>
         </div>
@@ -1347,9 +1443,19 @@
     // HOME — show first 3
     document.getElementById('homeProductsGrid').innerHTML = products.slice(0,3).map(p => renderCard(p)).join('');
 
+    // Price extraction helper
+    function getPrice(p) {
+      return parseFloat(p.price.replace(/[^0-9.]/g, '')) || 0;
+    }
+
     // SHOP — show all
     function renderShop(filter = 'all') {
-      const filtered = filter === 'all' ? products : products.filter(p => p.category === filter);
+      let filtered;
+      if (filter === 'all') filtered = products;
+      else if (filter === 'under2k') filtered = products.filter(p => getPrice(p) < 2000);
+      else if (filter === '2kto4k') filtered = products.filter(p => getPrice(p) >= 2000 && getPrice(p) <= 4000);
+      else if (filter === 'over4k') filtered = products.filter(p => getPrice(p) > 4000);
+      else filtered = products;
       document.getElementById('shopProductsGrid').innerHTML = filtered.map(p => renderCard(p)).join('');
       initReveal();
     }
