@@ -1105,10 +1105,10 @@
 
     <section class="shop-section">
       <div class="shop-filter">
-        <button class="filter-btn active" onclick="filterProducts('all', this)">All Machines</button>
-        <button class="filter-btn" onclick="filterProducts('under2k', this)">Under £2,000</button>
-        <button class="filter-btn" onclick="filterProducts('2kto4k', this)">£2,000 – £4,000</button>
-        <button class="filter-btn" onclick="filterProducts('over4k', this)">£4,000+</button>
+        <button class="filter-btn active" onclick="filterProducts('all', this)">All Products</button>
+        <button class="filter-btn" onclick="filterProducts('machine', this)">Espresso Machines</button>
+        <button class="filter-btn" onclick="filterProducts('grinder', this)">Grinders</button>
+        <button class="filter-btn" onclick="filterProducts('accessory', this)">Accessories</button>
       </div>
       <div class="shop-grid" id="shopProductsGrid"></div>
     </section>
@@ -1410,6 +1410,128 @@
         price: "£2,795",
         desc: "A bold, architectural dual boiler from Nurri with pressure profiling and a distinctive R-TYPE chassis. Available in white, black, and black stainless steel.",
         tags: ["Pressure Profiling", "Dual Boiler", "Architectural"]
+      },
+      // GRINDERS
+      {
+        id: 16,
+        name: "Eureka Mignon Specialita",
+        category: "grinder",
+        image: "https://bellabarista.co.uk/cdn/shop/files/SpecialitaBLblack.jpg?v=1701853532&width=600",
+        badge: "Sale",
+        price: "From £369",
+        desc: "A cult favourite espresso grinder with silent technology, stepless grind adjustment, and 55mm flat burrs. Available in matte black, white, and chrome.",
+        tags: ["55mm Burrs", "Silent Tech", "Stepless"]
+      },
+      {
+        id: 17,
+        name: "The Solo DF83 Single Dose",
+        category: "grinder",
+        image: "https://bellabarista.co.uk/cdn/shop/products/white-df83.jpg?v=1691074773&width=600",
+        badge: "Sale",
+        price: "£649",
+        desc: "A high-performance single dose grinder with 83mm flat burrs and near-zero retention. Exceptional grind quality at an accessible price. Available in white and black.",
+        tags: ["83mm Burrs", "Single Dose", "Zero Retention"]
+      },
+      {
+        id: 18,
+        name: "ECM S-Automatik 64 Grinder",
+        category: "grinder",
+        image: "https://bellabarista.co.uk/cdn/shop/products/ecm_grinder_1.jpg?v=1664372692&width=600",
+        badge: "ECM",
+        price: "£745",
+        desc: "ECM's premium automatic dosing grinder with 64mm flat burrs, timer-based dosing, and a sleek stainless steel build. A perfect match for any ECM machine.",
+        tags: ["64mm Burrs", "Auto Dosing", "Stainless Steel"]
+      },
+      {
+        id: 19,
+        name: "Olympia Moca Espresso Grinder",
+        category: "grinder",
+        image: "https://bellabarista.co.uk/cdn/shop/products/olympia-moca-grinder-anthracite-grey.jpg?v=1659019477&width=600",
+        badge: "Premium",
+        price: "£1,499",
+        desc: "Swiss-engineered precision grinder with 65mm titanium-coated burrs and ultra-low retention. Available in anthracite, red, and white. Built to last a lifetime.",
+        tags: ["65mm Titanium Burrs", "Swiss Made", "Low Retention"]
+      },
+      {
+        id: 20,
+        name: "Baratza Sette 270Wi Grinder",
+        category: "grinder",
+        image: "https://bellabarista.co.uk/cdn/shop/files/BaratzaSette270Wi1.jpg?v=1710844402&width=600",
+        badge: "Weigh-In",
+        price: "£399.95",
+        desc: "Grind-by-weight precision with integrated scale and 270 micro-adjustment settings. The Sette 270Wi delivers repeatable, accurate doses every single time.",
+        tags: ["Grind by Weight", "270 Settings", "Integrated Scale"]
+      },
+      {
+        id: 21,
+        name: "The Solo DF54 Single Dose",
+        category: "grinder",
+        image: "https://bellabarista.co.uk/cdn/shop/files/main_e8efe085-8e5a-46ea-9910-dad61e769ea4.webp?v=1708080904&width=600",
+        badge: "Sale",
+        price: "£239",
+        desc: "An outstanding entry-level single dose grinder with 54mm burrs. Compact, affordable, and impressively capable. Available in black, white, grey, and silver.",
+        tags: ["54mm Burrs", "Single Dose", "Compact"]
+      },
+      // ACCESSORIES
+      {
+        id: 22,
+        name: "ECM Tamper Station",
+        category: "accessory",
+        image: "https://bellabarista.co.uk/cdn/shop/products/ecm_tamping_stand.jpg?v=1663750372&width=600",
+        badge: "ECM",
+        price: "From £69.95",
+        desc: "A solid, well-engineered tamper station from ECM. Keeps your portafilter secure and your workspace tidy. Available in multiple sizes to match your setup.",
+        tags: ["Tamper Stand", "ECM", "Stainless Steel"]
+      },
+      {
+        id: 23,
+        name: "Profitec Tamper Station",
+        category: "accessory",
+        image: "https://bellabarista.co.uk/cdn/shop/products/Profitectamperstation.jpg?v=1663750313&width=600",
+        badge: "Profitec",
+        price: "£74.95",
+        desc: "Profitec's sleek tamper station in black or yellow. Holds your portafilter at the perfect tamping angle with a non-slip base. A barista bench essential.",
+        tags: ["Tamper Stand", "Profitec", "Non-Slip Base"]
+      },
+      {
+        id: 24,
+        name: "ECM Leather Tamping Mat",
+        category: "accessory",
+        image: "https://bellabarista.co.uk/cdn/shop/products/leather_tamping_mat.jpg?v=1659442870&width=600",
+        badge: "Premium",
+        price: "£29.99",
+        desc: "A premium leather tamping mat from ECM. Protects your portafilter and countertop while adding a touch of refined style to your espresso station.",
+        tags: ["Leather", "ECM", "Counter Protection"]
+      },
+      {
+        id: 25,
+        name: "ECM Equipment Holder",
+        category: "accessory",
+        image: "https://bellabarista.co.uk/cdn/shop/products/equipment_holder.jpg?v=1659445511&width=600",
+        badge: "ECM",
+        price: "From £75",
+        desc: "Stainless steel equipment holder from ECM for keeping tampers, brushes, and tools neatly organised on your espresso station. Available in two sizes.",
+        tags: ["Equipment Holder", "Stainless Steel", "Organiser"]
+      },
+      {
+        id: 26,
+        name: "La Marzocco Home Tamping Mat",
+        category: "accessory",
+        image: "https://bellabarista.co.uk/cdn/shop/products/tamping_mat.jpg?v=1659443169&width=600",
+        badge: "La Marzocco",
+        price: "£40.00",
+        desc: "An official La Marzocco branded tamping mat. High-quality rubber construction with the iconic La Marzocco logo — a perfect companion for any LM machine.",
+        tags: ["La Marzocco", "Rubber Mat", "Branded"]
+      },
+      {
+        id: 27,
+        name: "MHW-3BOMBER Portafilter Holder",
+        category: "accessory",
+        image: "https://bellabarista.co.uk/cdn/shop/files/Screenshot2026-01-09at14.40.48.png?v=1767969764&width=600",
+        badge: "New",
+        price: "£85.00",
+        desc: "The Astra Collection portafilter holder from MHW-3BOMBER. Universal 51–58mm fit, premium finish, and elegant form — a striking addition to any brew station.",
+        tags: ["Universal Fit", "51-58mm", "Premium Finish"]
       }
     ];
 
@@ -1425,7 +1547,7 @@
             ${showBadge && p.badge ? `<span class="product-badge">${p.badge}</span>` : ''}
           </div>
           <div class="product-body">
-            <div class="product-category">Dual Boiler Espresso Machine</div>
+            <div class="product-category">${p.category === 'machine' ? 'Dual Boiler Espresso Machine' : p.category === 'grinder' ? 'Espresso Grinder' : 'Barista Accessory'}</div>
             <div class="product-name">${p.name}</div>
             <p class="product-desc">${p.desc}</p>
             <div class="product-tags" style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px;">
@@ -1443,19 +1565,9 @@
     // HOME — show first 3
     document.getElementById('homeProductsGrid').innerHTML = products.slice(0,3).map(p => renderCard(p)).join('');
 
-    // Price extraction helper
-    function getPrice(p) {
-      return parseFloat(p.price.replace(/[^0-9.]/g, '')) || 0;
-    }
-
     // SHOP — show all
     function renderShop(filter = 'all') {
-      let filtered;
-      if (filter === 'all') filtered = products;
-      else if (filter === 'under2k') filtered = products.filter(p => getPrice(p) < 2000);
-      else if (filter === '2kto4k') filtered = products.filter(p => getPrice(p) >= 2000 && getPrice(p) <= 4000);
-      else if (filter === 'over4k') filtered = products.filter(p => getPrice(p) > 4000);
-      else filtered = products;
+      const filtered = filter === 'all' ? products : products.filter(p => p.category === filter);
       document.getElementById('shopProductsGrid').innerHTML = filtered.map(p => renderCard(p)).join('');
       initReveal();
     }
