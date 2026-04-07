@@ -307,19 +307,27 @@
 }
 
 .hero-product-card {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(201,150,58,0.2);
-  padding: 28px;
-  width: 320px;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 30px 80px rgba(0,0,0,0.35);
-}
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(201,150,58,0.25);
+  padding: 32px;
+  width: 340px;
+  backdrop-filter: blur(14px);
+  box-shadow: 
+    0 40px 100px rgba(0,0,0,0.5),
+    inset 0 0 0 1px rgba(255,255,255,0.03);
+  transform: translateY(-10px);
 
+}
+.hero-product-card:hover {
+  transform: translateY(-14px) scale(1.02);
+  box-shadow: 
+    0 60px 140px rgba(0,0,0,0.6),
+    inset 0 0 0 1px rgba(255,255,255,0.05);
+}
 .hero-product-img {
-  font-size: 5rem;
-  text-align: center;
-  margin-bottom: 18px;
-  opacity: 0.9;
+  font-size: 3.5rem;
+  opacity: 0.8;
+
 }
 
 .hero-product-title {
@@ -334,6 +342,7 @@
   color: var(--gold);
   letter-spacing: 0.1em;
   text-transform: uppercase;
+
 }
     .hero-product {
   position: relative;
@@ -942,8 +951,9 @@
       <div class="hero-right">
   <div class="hero-product">
     <div class="hero-product-card">
-      <div class="hero-product-img">☕</div>
-
+      <div class="hero-product-img">
+  <img src="https://images.unsplash.com/photo-1587080413959-06b859fb107d" style="width:100%; height:auto;">
+</div>
       <div class="hero-product-info">
         <div class="hero-product-title">Linea PB</div>
         <div class="hero-product-sub">Commercial Espresso Machine</div>
