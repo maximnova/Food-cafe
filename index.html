@@ -188,13 +188,13 @@
 
     /* ===================== HOME PAGE ===================== */
 
-    .hero {
-      min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      padding-top: 80px;
-      position: relative;
-      overflow: hidden;
+    .hero-right {
+  background: linear-gradient(135deg, #3b2410, #2a1a0e);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
     }
     .hero-left {
       padding: 80px 6vw 80px;
@@ -301,6 +301,48 @@
       border-top: 1px solid var(--border);
       animation: fade-up 0.6s 0.4s ease both;
     }
+    .hero-product {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-product-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(201,150,58,0.2);
+  padding: 28px;
+  width: 320px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.35);
+}
+
+.hero-product-img {
+  font-size: 5rem;
+  text-align: center;
+  margin-bottom: 18px;
+  opacity: 0.9;
+}
+
+.hero-product-title {
+  font-family: var(--font-head);
+  font-size: 1.2rem;
+  color: var(--cream);
+  margin-bottom: 4px;
+}
+
+.hero-product-sub {
+  font-size: 0.75rem;
+  color: var(--gold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+    .hero-product {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
     .stat-val {
       font-family: var(--font-head);
       font-size: 1.8rem;
@@ -898,12 +940,17 @@
         </div>
       </div>
       <div class="hero-right">
-        <div class="hero-coffee-art">☕</div>
-        <div class="hero-badge">
-          <div class="hero-badge-inner">
-            <div class="hero-badge-icon">☕</div>
-            <div class="hero-badge-text">Premium<br>Coffee Equipment</div>
-            <div class="hero-badge-sub">Est. London</div>
+  <div class="hero-product">
+    <div class="hero-product-card">
+      <div class="hero-product-img">☕</div>
+
+      <div class="hero-product-info">
+        <div class="hero-product-title">Linea PB</div>
+        <div class="hero-product-sub">Commercial Espresso Machine</div>
+      </div>
+    </div>
+  </div>
+</div>
           </div>
         </div>
       </div>
